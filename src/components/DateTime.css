@@ -9,25 +9,27 @@
   justify-content: center;
 }
 
-.datetime-widget .time {
-  font-size: 2.5rem;
+.datetime-widget .date {
+  font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 5px;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
 }
 
-.datetime-widget .date {
+.datetime-widget .time {
   font-size: 1rem;
   font-weight: 400;
-  opacity: 0.8;
+  opacity: 0.7;
+  letter-spacing: 0.5px;
 }
 
 @media (max-width: 768px) {
-  .datetime-widget .time {
-    font-size: 2rem;
+  .datetime-widget .date {
+    font-size: 1.4rem;
   }
 
-  .datetime-widget .date {
+  .datetime-widget .time {
     font-size: 0.9rem;
   }
 }

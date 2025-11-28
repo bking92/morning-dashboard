@@ -41,7 +41,6 @@ function News() {
             <div className="news-link-icon">{site.icon}</div>
             <div className="news-link-content">
               <h3 className="news-link-title">{site.name}</h3>
-              <p className="news-link-description">{site.description}</p>
             </div>
             <div className="news-link-arrow">→</div>
           </a>

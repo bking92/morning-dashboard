@@ -31,8 +31,8 @@ function DateTime() {
 
   return (
     <div className="datetime-widget widget">
-      <div className="time">{formatTime(currentTime)}</div>
       <div className="date">{formatDate(currentTime)}</div>
+      <div className="time">{formatTime(currentTime)}</div>
     </div>
   );
 }
