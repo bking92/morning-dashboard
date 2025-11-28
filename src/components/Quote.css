@@ -59,10 +59,28 @@
   background: #e9ecef;
 }
 
-.category-btn.active {
+.category-btn.active.work {
   background: #4a90e2;
   color: white;
   border-color: #4a90e2;
+}
+
+.category-btn.active.fitness {
+  background: #27ae60;
+  color: white;
+  border-color: #27ae60;
+}
+
+.category-btn.active.family {
+  background: #e67e22;
+  color: white;
+  border-color: #e67e22;
+}
+
+.category-btn.active.other {
+  background: #95a5a6;
+  color: white;
+  border-color: #95a5a6;
 }
 
 .save-goal-btn {

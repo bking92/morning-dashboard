@@ -84,7 +84,7 @@ function Quote() {
               <button
                 key={cat}
                 onClick={() => setCategory(cat)}
-                className={`category-btn ${category === cat ? 'active' : ''}`}
+                className={`category-btn ${category === cat ? 'active' : ''} ${cat}`}
               >
                 {cat}
               </button>
