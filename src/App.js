@@ -7,6 +7,7 @@ import TodoList from './components/TodoList';
 import Quote from './components/Quote';
 import RedditThreads from './components/RedditThreads';
 import Pomodoro from './components/Pomodoro';
+import WaterTracker from './components/WaterTracker';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <div className="left-column">
             <Quote />
             <Pomodoro />
+            <WaterTracker />
             <TodoList />
           </div>
 
