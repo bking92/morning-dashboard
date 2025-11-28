@@ -1,0 +1,234 @@
+.daily-boosts {
+  background: #ffffff;
+  border: 1px solid #e1e8ed;
+}
+
+.boosts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.boosts-header h2 {
+  margin: 0;
+}
+
+.boosts-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.reroll-btn,
+.manage-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e1e8ed;
+  background: #f8f9fa;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reroll-btn:hover,
+.manage-btn:hover {
+  background: #e9ecef;
+  border-color: #4a90e2;
+}
+
+.daily-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.boost-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.boost-item:hover {
+  background: #e9ecef;
+}
+
+.boost-item.completed {
+  opacity: 0.6;
+  border-color: #27ae60;
+}
+
+.boost-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.boost-text {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #333;
+}
+
+.boost-item.completed .boost-text {
+  text-decoration: line-through;
+}
+
+.boost-progress {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 600;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+/* Task Manager */
+.task-manager {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.add-task-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.task-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e1e8ed;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.task-input:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+.weight-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+
+.weight-selector label {
+  font-weight: 600;
+  color: #666;
+}
+
+.weight-selector select {
+  padding: 6px 10px;
+  border: 1px solid #e1e8ed;
+  border-radius: 6px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.add-task-btn {
+  padding: 10px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-task-btn:hover {
+  background: #357abd;
+}
+
+.task-bank-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.bank-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e1e8ed;
+}
+
+.bank-weight {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: white;
+  background: #4a90e2;
+  padding: 3px 8px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.bank-text {
+  flex: 1;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.delete-btn {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: #e74c3c;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+.task-bank-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.task-bank-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.task-bank-list::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 10px;
+}
+
+.task-bank-list::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}

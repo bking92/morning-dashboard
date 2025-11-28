@@ -9,7 +9,7 @@ import RedditThreads from './components/RedditThreads';
 import Pomodoro from './components/Pomodoro';
 import WaterTracker from './components/WaterTracker';
 import MarketIndices from './components/MarketIndices';
-import DailyQuote from './components/DailyQuote';
+import DailyBoosts from './components/DailyBoosts';
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
           </div>
 
           <div className="right-column">
-            <DailyQuote />
+            <DailyBoosts />
             <News />
             <RedditThreads />
           </div>

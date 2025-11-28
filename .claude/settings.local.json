@@ -5,7 +5,14 @@
       "Bash(npm install:*)",
       "Bash(git init:*)",
       "Bash(git add:*)",
-      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: Morning Dashboard\n\nA sleek and modern morning dashboard with:\n- Compact date/time and weather ribbon\n- One Important Thing daily goal tracker\n- Pomodoro timer with audio alerts\n- To-do list with localStorage\n- News links (WSJ, FT, RealClear Markets)\n- Bay Area sports Reddit feeds (49ers, Giants, Warriors)\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: Morning Dashboard\n\nA sleek and modern morning dashboard with:\n- Compact date/time and weather ribbon\n- One Important Thing daily goal tracker\n- Pomodoro timer with audio alerts\n- To-do list with localStorage\n- News links (WSJ, FT, RealClear Markets)\n- Bay Area sports Reddit feeds (49ers, Giants, Warriors)\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(gh repo create:*)",
+      "Bash(gh auth login:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(test:*)"
     ],
     "deny": [],
     "ask": []
