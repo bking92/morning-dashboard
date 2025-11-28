@@ -1,0 +1,33 @@
+.datetime-widget {
+  text-align: center;
+  background: #ffffff;
+  color: #2c3e50;
+  padding: 20px;
+  border: 1px solid #e1e8ed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.datetime-widget .time {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+
+.datetime-widget .date {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .datetime-widget .time {
+    font-size: 2rem;
+  }
+
+  .datetime-widget .date {
+    font-size: 0.9rem;
+  }
+}

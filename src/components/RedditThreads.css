@@ -1,0 +1,84 @@
+.reddit-widget {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.reddit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reddit-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #f8f9fa;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.reddit-item:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+  border-left-color: #4a90e2;
+}
+
+.reddit-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: fit-content;
+}
+
+.reddit-content {
+  flex: 1;
+}
+
+.reddit-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.reddit-stats {
+  display: flex;
+  gap: 15px;
+}
+
+.reddit-stat {
+  font-size: 0.85rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.reddit-widget::-webkit-scrollbar {
+  width: 8px;
+}
+
+.reddit-widget::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.reddit-widget::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.reddit-widget::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
