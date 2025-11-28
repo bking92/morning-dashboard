@@ -1,0 +1,53 @@
+.market-widget {
+  background: #ffffff;
+  border: 1px solid #e1e8ed;
+}
+
+.indices-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.index-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  gap: 4px;
+}
+
+.index-name {
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.index-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.index-change {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.index-change.positive {
+  color: #27ae60;
+}
+
+.index-change.negative {
+  color: #e74c3c;
+}
+
+@media (max-width: 768px) {
+  .indices-grid {
+    grid-template-columns: 1fr;
+  }
+}

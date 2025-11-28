@@ -8,6 +8,8 @@ import Quote from './components/Quote';
 import RedditThreads from './components/RedditThreads';
 import Pomodoro from './components/Pomodoro';
 import WaterTracker from './components/WaterTracker';
+import MarketIndices from './components/MarketIndices';
+import DailyQuote from './components/DailyQuote';
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
         <div className="top-ribbon">
           <DateTime />
           <Weather />
+          <MarketIndices />
         </div>
 
         <div className="content-grid">
@@ -27,6 +30,7 @@ function App() {
           </div>
 
           <div className="right-column">
+            <DailyQuote />
             <News />
             <RedditThreads />
           </div>
