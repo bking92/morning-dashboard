@@ -20,7 +20,7 @@ function Weather() {
             // Note: Open-Meteo doesn't require an API key, but we keep the env var for potential future use
             // Fetch weather data from Open-Meteo (no API key required)
             const weatherResponse = await fetch(
-              `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=auto`
+              `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,uv_index_max&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=auto`
             );
 
             if (!weatherResponse.ok) {
@@ -46,12 +46,14 @@ function Weather() {
               main: {
                 temp: weatherData.current.temperature_2m,
                 feels_like: weatherData.current.temperature_2m, // Open-Meteo doesn't provide feels_like
-                humidity: weatherData.current.relative_humidity_2m,
                 temp_max: weatherData.daily.temperature_2m_max[0],
                 temp_min: weatherData.daily.temperature_2m_min[0]
               },
               wind: {
                 speed: weatherData.current.wind_speed_10m
+              },
+              uv: {
+                index: weatherData.daily.uv_index_max[0]
               },
               weather: [{
                 description: getWeatherDescription(weatherData.current.weather_code),
@@ -165,8 +167,8 @@ function Weather() {
               <span className="stat-value">{Math.round(weather.main.feels_like)}°F</span>
             </div>
             <div className="stat">
-              <span className="stat-label">Humidity</span>
-              <span className="stat-value">{weather.main.humidity}%</span>
+              <span className="stat-label">UV Index</span>
+              <span className="stat-value">{Math.round(weather.uv.index)}</span>
             </div>
             <div className="stat">
               <span className="stat-label">Wind</span>
