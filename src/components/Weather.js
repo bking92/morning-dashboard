@@ -20,7 +20,7 @@ function Weather() {
             // Note: Open-Meteo doesn't require an API key, but we keep the env var for potential future use
             // Fetch weather data from Open-Meteo (no API key required)
             const weatherResponse = await fetch(
-              `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph`
+              `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=auto`
             );
 
             if (!weatherResponse.ok) {
@@ -46,7 +46,9 @@ function Weather() {
               main: {
                 temp: weatherData.current.temperature_2m,
                 feels_like: weatherData.current.temperature_2m, // Open-Meteo doesn't provide feels_like
-                humidity: weatherData.current.relative_humidity_2m
+                humidity: weatherData.current.relative_humidity_2m,
+                temp_max: weatherData.daily.temperature_2m_max[0],
+                temp_min: weatherData.daily.temperature_2m_min[0]
               },
               wind: {
                 speed: weatherData.current.wind_speed_10m
@@ -156,6 +158,7 @@ function Weather() {
         <div className="weather-details">
           <h3>{weather.name}</h3>
           <p className="weather-description">{weather.weather[0].description}</p>
+          <p className="temp-range">H: {Math.round(weather.main.temp_max)}° • L: {Math.round(weather.main.temp_min)}°</p>
           <div className="weather-stats">
             <div className="stat">
               <span className="stat-label">Feels like</span>
