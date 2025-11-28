@@ -142,6 +142,14 @@ function Weather() {
     return iconMap[code] || '01d';
   };
 
+  // Helper function to get UV index color
+  const getUVColor = (uvIndex) => {
+    if (uvIndex <= 3) return '#27ae60'; // green
+    if (uvIndex <= 6) return '#f39c12'; // yellow/orange
+    if (uvIndex <= 9) return '#e74c3c'; // red
+    return '#9b59b6'; // purple
+  };
+
   if (loading) return <div className="weather-widget widget"><div className="loading">Loading weather...</div></div>;
   if (error) return <div className="weather-widget widget"><div className="error">{error}</div></div>;
 
@@ -168,7 +176,9 @@ function Weather() {
             </div>
             <div className="stat">
               <span className="stat-label">UV Index</span>
-              <span className="stat-value">{Math.round(weather.uv.index)}</span>
+              <span className="stat-value" style={{ color: getUVColor(weather.uv.index) }}>
+                {Math.round(weather.uv.index)}
+              </span>
             </div>
             <div className="stat">
               <span className="stat-label">Wind</span>
