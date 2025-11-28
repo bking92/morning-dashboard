@@ -39,6 +39,14 @@ function Quote() {
 
     setGoals(updatedGoals);
     localStorage.setItem('dailyGoals', JSON.stringify(updatedGoals));
+    setTodayGoal(''); // Clear the input after saving
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      saveGoal();
+    }
   };
 
   const toggleComplete = (date) => {
@@ -73,6 +81,7 @@ function Quote() {
         <textarea
           value={todayGoal}
           onChange={(e) => setTodayGoal(e.target.value)}
+          onKeyDown={handleKeyDown}
           placeholder="What's your one important thing today?"
           className="goal-input"
           rows="3"
