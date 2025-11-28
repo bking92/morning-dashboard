@@ -150,6 +150,15 @@ function Weather() {
     return '#9b59b6'; // purple
   };
 
+  // Helper function to get temperature color
+  const getTempColor = (temp) => {
+    if (temp < 40) return '#3498db'; // blue - cold
+    if (temp < 60) return '#5dade2'; // light blue - cool
+    if (temp < 75) return '#27ae60'; // green - moderate
+    if (temp < 90) return '#f39c12'; // orange - warm
+    return '#e74c3c'; // red - hot
+  };
+
   if (loading) return <div className="weather-widget widget"><div className="loading">Loading weather...</div></div>;
   if (error) return <div className="weather-widget widget"><div className="error">{error}</div></div>;
 
@@ -168,11 +177,17 @@ function Weather() {
         <div className="weather-details">
           <h3>{weather.name}</h3>
           <p className="weather-description">{weather.weather[0].description}</p>
-          <p className="temp-range">H: {Math.round(weather.main.temp_max)}° • L: {Math.round(weather.main.temp_min)}°</p>
+          <p className="temp-range">
+            H: <span style={{ color: getTempColor(weather.main.temp_max) }}>{Math.round(weather.main.temp_max)}°</span>
+            {' • '}
+            L: <span style={{ color: getTempColor(weather.main.temp_min) }}>{Math.round(weather.main.temp_min)}°</span>
+          </p>
           <div className="weather-stats">
             <div className="stat">
               <span className="stat-label">Feels like</span>
-              <span className="stat-value">{Math.round(weather.main.feels_like)}°F</span>
+              <span className="stat-value" style={{ color: getTempColor(weather.main.feels_like) }}>
+                {Math.round(weather.main.feels_like)}°F
+              </span>
             </div>
             <div className="stat">
               <span className="stat-label">UV Index</span>
