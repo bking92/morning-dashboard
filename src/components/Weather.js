@@ -195,10 +195,12 @@ function Weather() {
                 {Math.round(weather.uv.index)}
               </span>
             </div>
-            <div className="stat">
-              <span className="stat-label">Wind</span>
-              <span className="stat-value">{Math.round(weather.wind.speed)} mph</span>
-            </div>
+            {weather.wind.speed >= 20 && (
+              <div className="stat">
+                <span className="stat-label">Wind</span>
+                <span className="stat-value">{Math.round(weather.wind.speed)} mph</span>
+              </div>
+            )}
           </div>
         </div>
       </div>
