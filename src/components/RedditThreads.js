@@ -23,8 +23,9 @@ function RedditThreads() {
 
       for (const sub of subreddits) {
         // Fetch more posts initially so we can filter and still get 3
+        // Use CORS proxy to avoid CORS issues
         const response = await fetch(
-          `https://www.reddit.com/r/${sub.name}/hot.json?limit=20`,
+          `https://corsproxy.io/?https://www.reddit.com/r/${sub.name}/hot.json?limit=20`,
           {
             headers: {
               'Accept': 'application/json'
